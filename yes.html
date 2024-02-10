@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Valentine's Day</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: pink; /* Light pink background */
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 3vw; /* Adjust padding using viewport units */
+            border-radius: 3vw; /* Adjust border radius using viewport units */
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Soft shadow effect */
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 4vw; /* Adjust font size using viewport units */
+            color: #c70039; /* Deep red color */
+            margin-bottom: 1.5vw; /* Adjust margin using viewport units */
+        }
+
+        input[type="text"] {
+            width: 50vw; /* Adjust width using viewport units */
+            padding: 1.5vw; /* Adjust padding using viewport units */
+            font-size: 2.5vw; /* Adjust font size using viewport units */
+            border: 1px solid #ddd; /* Light gray border */
+            border-radius: 1.5vw; /* Adjust border radius using viewport units */
+            margin-bottom: 1.5vw; /* Adjust margin using viewport units */
+        }
+
+        button {
+            background-color: #ff5733; /* Coral color */
+            color: #fff;
+            border: none;
+            padding: 2vw 4vw; /* Adjust padding using viewport units */
+            font-size: 2.5vw; /* Adjust font size using viewport units */
+            border-radius: 1.5vw; /* Adjust border radius using viewport units */
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        button:hover {
+            background-color: #ff6f49; /* Lighter coral color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter your name</h2>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <br>
+        <button onclick="submitName()">Submit</button>
+    </div>
+
+    <script>
+        function submitName() {
+            var name = document.getElementById("nameInput").value;
+            var encodedName = encodeURIComponent(name);
+            var url = "nextpage.html?name=" + encodedName;
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

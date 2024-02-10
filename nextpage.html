@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Happy Valentine's Day</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffcccc; /* Light pink background */
+            font-size: 40px; /* Slightly decreased font size */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font family */
+            color: #333; /* Font color */
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px; /* Slightly decreased padding */
+            border-radius: 15px; /* Slightly decreased border radius */
+            background-color: #fff; /* White background */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+
+        .greeting h2 {
+            font-size: 60px; /* Slightly decreased font size for greeting */
+            color: #ff4d4d; /* Red color */
+            margin-bottom: 30px; /* Slightly decreased margin */
+        }
+
+        button {
+            background-color: #ff6666; /* Light red */
+            color: white;
+            padding: 20px 40px; /* Slightly decreased padding */
+            font-size: 48px; /* Slightly decreased font size for button */
+            border: none;
+            border-radius: 8px; /* Slightly decreased border radius for button */
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        button:hover {
+            background-color: #ff4d4d; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="greeting">
+            <h2>Happy Valentine's Day!</h2>
+            <div id="nameGreeting"></div>
+            <button onclick="goToFinalPage()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        var name = getParameterByName('name');
+
+        var nameGreetingElement = document.getElementById('nameGreeting');
+        if (name) {
+            nameGreetingElement.innerHTML = "<p> " + name + "!</p>";
+        } else {
+            nameGreetingElement.innerHTML = "<p></p>";
+            
+        }
+
+        function goToFinalPage() {
+            window.location.href = "finalpage.html";
+        }
+
+
+    </script>
+</body>
+</html>
